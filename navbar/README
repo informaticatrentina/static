@@ -1,0 +1,139 @@
+Navbar
+======
+
+The main objective of navbar module is reusability and better management of
+code. Two menu bar is created in navbar module one for bootstrap 2.0 and 
+another for bootstrap 3.0 . 
+:author: The Navbar Developer Team http://www.incaendo.com
+
+
+Installation
+------------
+
+To setup navbar module you have to follow some steps mentioned below:
+
+1. Checkout source code from repository and put into /protected/modules directory 
+   of your project
+   (git@git.ahref.eu:lib/backendconnector.git)::
+
+
+CONFIGURATION
+-------------
+
+ 1. Add module in modules key of return array in config/config.php of project.
+      'modules'=> array('navbar');
+
+ All constant listed below is defined in local config of your project.
+
+ 2. BASE_URL  The base url of project.
+
+ 3. REGISTRATION_URL The url where redirect to user for registration.
+
+ 4. LOGOUT_URL  The url for logout a user. It handles logout action.  
+
+ 5. AHREF_FOUNDATION_URL The  url of ahref foundation.
+ 
+ 6. AHREF_FOUNDATION_LOGO The url of ahref foundation logo image.
+
+ 7. CIVIC_LINKS_BASE_URL The base url of civic links site.
+
+ 8. CIVIC_LINKS_LOGO  The url of civic links logo.
+
+ 9. FACT_CHECKING_PROJECT_BASE_URL  The base url of fact checking project.
+
+ 10. TIMU_PROJECT_BASE_URL The base url of timu project.
+
+ 11. CIVICI_PROJECT_BASE_URL  The base url of civici project.
+
+ 12. CONTEST_GRANT_PROJECT_BASE_URL  The base url of contest and grant project.
+
+
+Implementation
+-------------
+1. Include navbar module css and views in your project
+
+  Case 1:
+
+    if you are using bootstrap 2.0 then include css named as navbar2.css and view 
+    named as navbar2.php in your controller.
+
+    Example: If you use navbar module in login  action of TestController then
+
+      class TestController extends Controller {
+
+        public $header;
+
+        public function actionLogin () {
+          //include navbar module view and css
+          $basePath = Yii::getPathOfAlias('application.modules.navbar');
+          $baseUrl = Yii::app()->getAssetManager()->publish($basePath);
+          $this->header = $this->renderPartial('application.modules.navbar.views.navbar.navbar2', array(), true);
+          Yii::app()->clientScript->registerCssFile($baseUrl . '/css/navbar2.css');
+          .
+          .
+          .
+          .      
+          $this->render('login');
+      }
+    }
+
+
+  Case 2:
+   
+    if you are using bootstrap 3.0 then include css named as navbar3.css and view 
+    named as navbar3.php in your controller.
+
+    Example: If you use navbar module in login  action of TestController then
+
+      class TestController extends Controller {
+
+        public $header;
+
+        public function actionLogin () {
+          //include navbar module view and css
+          $basePath = Yii::getPathOfAlias('application.modules.navbar');
+          $baseUrl = Yii::app()->getAssetManager()->publish($basePath);
+          $this->header = $this->renderPartial('application.modules.navbar.views.navbar.navbar2', array(), true);
+          Yii::app()->clientScript->registerCssFile($baseUrl . '/css/navbar2.css');
+          .
+          .
+          .
+          .      
+          $this->render('login');
+      }
+    }
+
+2. Now  $header variable contain html of header. You can use it in your project layout.
+
+   <!DOCTYPE html>
+   <html>
+     <head>  </head>
+     <body>
+       <?php echo $this->header; ?>      
+       <?php echo $content; ?> 
+     </body>
+   </html>
+
+  if you are using twig then use 
+      {{this.header}}
+
+
+Prerequisite
+------------
+
+For logged in user, you have to create session and set following key in session:
+ 
+Yii::app()->session['user] = array(
+  'firstname' => First name of the user,
+  'lastname' => First name of the user
+)
+
+
+Requirements
+------------
+
+Navbar module is developed on yii framework So all requirements of yii
+framework must be fulfilled:
+
+The minimum requirement by Yii is that your Web server supports PHP 5.1.0 or
+above.

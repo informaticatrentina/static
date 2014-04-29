@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.navbar-inner {
+  font-size:15px;
+}
+
+.brand-logo {
+  display:block; 
+  float:left; 
+  padding-top:10px; 
+  padding-right:20px;
+}
+
+/* Button Styling
+    -------------------------------------------------- */
+.btn-nav {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: none;
+  background-color: #01a4a5;
+  background-image: none;
+
+  border-color: transparent;
+
+  border: 1px solid #01a4a5;
+  border-bottom-color: #01a4a5;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  *margin-left: .3em;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
