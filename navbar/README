@@ -14,39 +14,38 @@ To setup navbar module you have to follow some steps mentioned below:
 
 1. Checkout source code from repository and put into /protected/modules directory 
    of your project
-   (git@git.ahref.eu:lib/backendconnector.git)::
+   (git@git.ahref.eu:lib/static.git)
 
 
 CONFIGURATION
 -------------
 
- 1. Add module in modules key of return array in config/config.php of project.
-      'modules'=> array('navbar');
-
  All constant listed below is defined in local config of your project.
 
- 2. BASE_URL  The base url of project.
+ -. BASE_URL  The base url of project.
 
- 3. REGISTRATION_URL The url where redirect to user for registration.
+ - REGISTRATION_URL The url where redirect to user for registration.
 
- 4. LOGOUT_URL  The url for logout a user. It handles logout action.  
+ - LOGOUT_URL  The url for logout a user. It handles logout action.
 
- 5. AHREF_FOUNDATION_URL The  url of ahref foundation.
+ - AHREF_FOUNDATION_URL The  url of ahref foundation.
  
- 6. AHREF_FOUNDATION_LOGO The url of ahref foundation logo image.
+ - AHREF_FOUNDATION_LOGO The url of ahref foundation logo image.
 
- 7. CIVIC_LINKS_BASE_URL The base url of civic links site.
+ - CIVIC_LINKS_BASE_URL The base url of civic links site.
 
- 8. CIVIC_LINKS_LOGO  The url of civic links logo.
+ - CIVIC_LINKS_LOGO  The url of civic links logo.
 
- 9. FACT_CHECKING_PROJECT_BASE_URL  The base url of fact checking project.
+ - FACT_CHECKING_PROJECT_BASE_URL  The base url of fact checking project.
 
- 10. TIMU_PROJECT_BASE_URL The base url of timu project.
+ - TIMU_PROJECT_BASE_URL The base url of timu project.
 
- 11. CIVICI_PROJECT_BASE_URL  The base url of civici project.
+ - CIVICI_PROJECT_BASE_URL  The base url of civici project.
 
- 12. CONTEST_GRANT_PROJECT_BASE_URL  The base url of contest and grant project.
+ - CONTEST_GRANT_PROJECT_BASE_URL  The base url of contest and grant project.
 
+ - ENABLE_MODULES_LIST The constant for enable static/navbar module in your project.
+      for ex.  ["static/navbar", "..", ..]
 
 Implementation
 -------------
