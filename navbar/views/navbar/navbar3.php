@@ -33,7 +33,7 @@
         <li><a href="<?php echo AHREF_FOUNDATION_URL; ?>" target="_blank"><img src="<?php echo AHREF_FOUNDATION_LOGO; ?>" alt="ahref logo" style="margin-top:-4px;"></a></li>
       </ul>
       <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) {  ?> 
-        <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs">Esi</a>
+        <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs">Esci</a>
       <?php } else { ?>  
         <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs">Iscriviti</a>
       <?php } ?> 
