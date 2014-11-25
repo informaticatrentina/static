@@ -16,7 +16,7 @@
           <li class="nav visible-xs"><a href="<?php echo LOGOUT_URL; ?>">Logout</a></li>
         <?php } else { ?>
           <li class=" visible-xs"><a class="login-link" href="#">Accedi</a></li>
-          <li class=" visible-xs"><a href="<?php echo REGISTRATION_URL; ?>">Iscriviti</a></li>
+          <li class=" visible-xs register-link"><a href="<?php echo REGISTRATION_URL; ?>">Iscriviti</a></li>
         <?php } ?>
         <li><a href="<?php echo FACT_CHECKING_PROJECT_BASE_URL; ?>">Fact Checking</a></li>
         <li><a href="<?php echo TIMU_PROJECT_BASE_URL; ?>">Timu</a></li>
@@ -35,7 +35,7 @@
       <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) {  ?> 
         <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs">Esci</a>
       <?php } else { ?>  
-        <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs">Iscriviti</a>
+        <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-primary btn-sm navbar-btn pull-right hidden-xs register-link">Iscriviti</a>
       <?php } ?> 
     </div>
   </div>
