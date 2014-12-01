@@ -10,8 +10,12 @@
       <div class="nav-collapse collapse">
         <ul class="nav" id="yw0">
           <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
-            <li class="hidden-desktop"><a>Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?></a></li>
-            <li class="hidden-desktop"><a href="<?php echo LOGOUT_URL; ?>">Logout</a></li>            
+            <li class="hidden-desktop">
+              <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
+                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+              </a>
+            </li>
+            <li class="hidden-desktop"><a href="<?php echo LOGOUT_URL; ?>">Esci</a></li>            
           <?php } else { ?>
             <li class="hidden-desktop login-link"><a href="#">Accedi</a></li>
             <li class="hidden-desktop register-link"><a href="<?php echo REGISTRATION_URL; ?>">Iscriviti</a></li>
@@ -24,14 +28,18 @@
 
         <ul class="nav pull-right visible-desktop"> 
           <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
-            <li><a>Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?></a></li>
+            <li>
+              <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
+                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+              </a>
+            </li>
           <?php } else { ?>
             <li class="login-link"><a href="#">Accedi</a></li>
           <?php } ?>
           <li><a href="<?php echo AHREF_FOUNDATION_URL; ?>" target="_blank"><img src="<?php echo AHREF_FOUNDATION_LOGO; ?>" alt="ahref logo"></a></li>
         </ul>
         <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
-          <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-nav pull-right visible-desktop">Logout</a>
+          <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-nav pull-right visible-desktop">Esci</a>
         <?php } else { ?>
           <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-nav pull-right visible-desktop register-link">Iscriviti</a>
         <?php } ?>
