@@ -17,7 +17,9 @@
             <li class="hidden-desktop"><a href="<?php echo LOGOUT_URL; ?>">Esci</a></li>            
           <?php } else { ?>
             <li class="hidden-desktop login-link"><a href="#">Accedi</a></li>
-            <li class="hidden-desktop register-link"><a href="<?php echo REGISTRATION_URL; ?>">Iscriviti</a></li>
+            <?php if (isset(Yii::app()->globaldef->params['disable_registration_link']) && Yii::app()->globaldef->params['disable_registration_link'] != 1) { ?>
+              <li class="hidden-desktop register-link"><a href="<?php echo REGISTRATION_URL; ?>">Iscriviti</a></li>
+            <?php } ?>
           <?php } ?>
         </ul>
 
@@ -35,8 +37,9 @@
         <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
           <a href="<?php echo LOGOUT_URL; ?>" class="btn btn-nav pull-right visible-desktop">Esci</a>
         <?php } else { ?>
-          <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-nav pull-right visible-desktop register-link">Iscriviti</a>
-        <?php } ?>
+          <?php if (isset(Yii::app()->globaldef->params['disable_registration_link']) && Yii::app()->globaldef->params['disable_registration_link'] != 1) { ?>
+            <a href="<?php echo REGISTRATION_URL; ?>" class="btn btn-nav pull-right visible-desktop register-link">Iscriviti</a>
+          <?php }} ?>
       </div>
     </div>
   </div>
