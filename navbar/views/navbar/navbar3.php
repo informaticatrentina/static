@@ -26,11 +26,19 @@
 
       <ul class="nav navbar-nav hidden-xs pull-right"> 
         <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) {  ?> 
+		    <?php if (isset(Yii::app()->session['social_login']) && !empty(Yii::app()->session['social_login']) && Yii::app()->session['social_login'] == 'true') {  ?> 
           <li>
+            <a href="#" >
+              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+            </a>
+          </li>
+		  <?php } else { ?>
+		  <li>
             <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
               Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
             </a>
           </li>
+		  <?php } ?>  
         <?php } else { ?>
           <li><a class="login-link" href="#">Accedi</a></li>
         <?php } ?>  
