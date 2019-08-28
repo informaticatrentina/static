@@ -13,7 +13,7 @@
         <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) {  ?> 
           <li class="nav visible-xs">
             <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
-              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] .((isset(Yii::app()->session['user']['lastname']) && !empty(Yii::app()->session['user']['lastname']))?(' '.Yii::app()->session['user']['lastname']):('')); ?>
             </a>
           </li>
           <li class="nav visible-xs"><a href="<?php echo LOGOUT_URL; ?>">Esci</a></li>
@@ -29,13 +29,13 @@
 		    <?php if (isset(Yii::app()->session['social_login']) && !empty(Yii::app()->session['social_login']) && Yii::app()->session['social_login'] == 'true') {  ?> 
           <li>
             <a href="#" >
-              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] .((isset(Yii::app()->session['user']['lastname']) && !empty(Yii::app()->session['user']['lastname']))?(' '.Yii::app()->session['user']['lastname']):('')); ?>
             </a>
           </li>
 		  <?php } else { ?>
 		  <li>
             <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
-              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+              Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] .((isset(Yii::app()->session['user']['lastname']) && !empty(Yii::app()->session['user']['lastname']))?(' '.Yii::app()->session['user']['lastname']):('')); ?>
             </a>
           </li>
 		  <?php } ?>  

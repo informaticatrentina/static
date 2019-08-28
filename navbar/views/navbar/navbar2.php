@@ -11,7 +11,7 @@
           <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
             <li class="hidden-desktop">
               <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
-                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] .((isset(Yii::app()->session['user']['lastname']) && !empty(Yii::app()->session['user']['lastname']))?(' '.Yii::app()->session['user']['lastname']):('')); ?>
               </a>
             </li>
             <li class="hidden-desktop"><a href="<?php echo LOGOUT_URL; ?>">Esci</a></li>            
@@ -27,7 +27,7 @@
           <?php if (isset(Yii::app()->session['user']) && !empty(Yii::app()->session['user'])) { ?> 
             <li>
               <a href="<?php echo PROFILE_URL .  Yii::app()->session['user']['id']; ?>" target="_blank">
-                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] . ' ' . Yii::app()->session['user']['lastname']; ?>
+                Benvenuto:&nbsp;<?php echo Yii::app()->session['user']['firstname'] .((isset(Yii::app()->session['user']['lastname']) && !empty(Yii::app()->session['user']['lastname']))?(' '.Yii::app()->session['user']['lastname']):('')); ?>
               </a>
             </li>
           <?php } else { ?>
